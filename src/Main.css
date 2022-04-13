@@ -1,0 +1,22 @@
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+img {
+    width: 100%;
+    height: 50%;
+    object-fit: fill;
+    margin: auto;
+}
+
+p {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
