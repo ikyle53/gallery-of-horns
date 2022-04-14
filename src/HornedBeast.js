@@ -32,17 +32,34 @@ class HornedBeast extends React.Component {
     render() {
         return (
             <>
-                <Card style={{ width: '18rem', background: 'orange' }} key={this.props.idx}>
+                <Card style={{
+                     width: '18rem', 
+                     background: 'orange' 
+                     }} key={this.props.idx}>
+
                     <Card.Img
                         variant="top"
                         src={this.props.imageUrl}
                         alt={this.props.description}
                         title={this.props.title}
                         onClick={this.callFunctions}
+                        style={{cursor: 'pointer'}}
                     />
-                    <Card.Body>
-                        <Card.Title style={{ textAlign: 'center' }}>{this.props.title}</Card.Title>
-                        <Card.Text style={{
+
+                    <Card.Body style={{width: '100%'}}>
+                        <Card.Title style={{ 
+                            textAlign: 'center', 
+                            width: '100%',
+                            padding: '20px 0 20px 0',
+                            color: 'purple',
+                            fontSize: '1.5rem',
+                            textDecoration: 'underline dotted'}}>
+                        {this.props.title}
+                        </Card.Title>
+
+                        <Card.Text 
+                        onClick={this.handleFaves} 
+                        style={{
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center',
@@ -52,9 +69,24 @@ class HornedBeast extends React.Component {
                             width: '50px',
                             height: '50px',
                             borderRadius: '50%',
-                        }}>💙 {this.state.favorites}</Card.Text>
-                        <Card.Text className='chngBckg'>Description: {this.props.description}</Card.Text>
-                        <Card.Text>Horns: {this.props.horns}</Card.Text>
+                            cursor: 'pointer'
+                        }}>💙 {this.state.favorites}
+                        </Card.Text>
+
+                        <Card.Text className='chngBckg' 
+                        style={{
+                            textAlign: 'left', 
+                            fontSize: '1.2rem', 
+                            fontWeight: '700'
+                            }}>{this.props.description}
+                        </Card.Text>
+
+                        <Card.Text 
+                        style={{
+                            textAlign: 'center',
+                            fontSize: '1.1rem',
+                            }}>Horns: {this.props.horns}
+                        </Card.Text>
                     </Card.Body>
                 </Card>
             </>
