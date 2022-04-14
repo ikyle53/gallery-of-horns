@@ -4,7 +4,7 @@ import './Main.css';
 
 class Main extends React.Component {
   render() {
-    let beasties = this.props.data.map((beasts, idx) => {
+    let beasties = this.props.filteredData.map((beasts, idx) => {
       return <HornedBeast
         name={beasts.name}
         imageUrl={beasts.image_url}
